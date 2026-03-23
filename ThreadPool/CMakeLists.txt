@@ -1,0 +1,3 @@
+add_executable(thread_pool)
+target_sources(thread_pool PRIVATE test_thread_pool.cpp)
+target_compile_features(thread_pool PRIVATE cxx_std_20)

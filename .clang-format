@@ -1,0 +1,75 @@
+BasedOnStyle: "Google"
+IndentWidth: 4
+
+--- # C++ Style
+Language: Cpp
+TabWidth: 4
+DerivePointerAlignment: false
+PointerAlignment: Left
+ReferenceAlignment: Left
+AccessModifierOffset: -4
+
+AlignConsecutiveShortCaseStatements:
+  Enabled: true
+  AcrossEmptyLines: true
+  AcrossComments: true
+  AlignCaseArrows: true
+  AlignCaseColons: true
+
+AlignConsecutiveMacros: AcrossComments
+AlignEscapedNewlines: Left
+
+AlignTrailingComments:
+  Kind: Always
+  OverEmptyLines: 1
+
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseExpressionOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortCompoundRequirementOnASingleLine: true
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Inline
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLambdasOnASingleLine: Empty
+AllowShortLoopsOnASingleLine: true
+BreakAfterAttributes: Always
+BreakBeforeConceptDeclarations: Always
+BreakConstructorInitializers: BeforeColon
+BreakInheritanceList: BeforeColon
+BreakTemplateDeclarations: Yes
+CompactNamespaces: false
+BreakBeforeTernaryOperators: true
+EmptyLineBeforeAccessModifier: Always
+FixNamespaceComments: true
+IndentExternBlock: Indent
+IndentPPDirectives: BeforeHash
+IndentRequiresClause: false
+InsertNewlineAtEOF: true
+
+# 0:保持字面量原样 正数:每N个插入一个分隔符 负数:删除分隔符
+IntegerLiteralSeparator:
+  Binary: 0
+  Decimal: 3
+  Hex: -1
+
+LambdaBodyIndentation: Signature
+
+# 预处理器缩进
+PPIndentWidth: 2
+
+ReflowComments: IndentOnly
+RemoveSemicolon: true
+RequiresClausePosition: WithPreceding
+RequiresExpressionIndentation: Keyword
+SeparateDefinitionBlocks: Always
+SortIncludes: CaseSensitive
+SortUsingDeclarations: LexicographicNumeric
+
+SpaceAfterLogicalNot: true
+SpaceAfterTemplateKeyword: true
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCaseColon: true
+SpaceBeforeCpp11BracedList: true
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpacesBeforeTrailingComments: 2
