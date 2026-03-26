@@ -3,6 +3,7 @@
   #define _COMPONENTS_MEMORY_POOL_H_
 
   #include <cstddef>
+  #include <cstdint>
   #include <type_traits>
   #include <utility>
 
@@ -92,14 +93,14 @@ inline void MemoryPool<T, BlockSize>::allocate_block() {
     current_block_ = reinterpret_cast<slot_pointer_>(new_block);
     data_pointer_ tail = new_block + sizeof(slot_pointer_);
 
-    constexpr size_type aligned_size = alignof(slot_type_);
+    static constexpr size_type ALIGNED_SIZE = alignof(slot_type_);
 
-    if constexpr (AlignedChecker<aligned_size>::value) {
+    if constexpr (AlignedChecker<ALIGNED_SIZE>::value) {
         uintptr_t res = reinterpret_cast<uintptr_t>(tail);
         current_slot_ = reinterpret_cast<slot_pointer_>(
-            (res + aligned_size - 1) & ~(aligned_size - 1));
+            (res + ALIGNED_SIZE - 1) & ~(ALIGNED_SIZE - 1));
     } else {
-        size_type tail_padding = padding_size(tail, aligned_size);
+        size_type tail_padding = padding_size(tail, ALIGNED_SIZE);
         current_slot_ = reinterpret_cast<slot_pointer_>(tail + tail_padding);
     }
 
